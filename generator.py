@@ -154,11 +154,11 @@ class Generator:
     def toks2text_batch(self, tokens_batch, return_tokens=False, skip_special_tokens=True):
         end_id = self.tokenizer.eos_token_id
 
-        tokens_batch = [tokens[1:].tolist() + [end_id] for tokens in tokens_batch] # Add the end_id just in case
+        tokens_batch = [tokens[0:].tolist() + [end_id] for tokens in tokens_batch] # Add the end_id just in case
         tokens_batch = [tokens[:tokens.index(end_id)] for tokens in tokens_batch] # Cut at the end token
 
         # texts = [self.tokenizer.decode(tokens) for tokens in tokens_batch]
-        texts = self.tokenizer.batch_decode(tokens_batch, skip_special_tokens=skip_special_tokens, clean_up_tokenization_spaces=False) #TODO: testen...
+        texts = self.tokenizer.batch_decode(tokens_batch, skip_special_tokens=skip_special_tokens, clean_up_tokenization_spaces=False) 
 
         if not return_tokens:
             return texts 
@@ -195,6 +195,7 @@ class Generator:
     def torch_sampling(self, encs, model, sample_size, past_key_values=None, max_output_len=100, top_k=10, top_p=0.9, no_repeat_ngram=4, temperature=1.0):
         if past_key_values:
             encs = None
+        
         sample_outputs = model.generate(
             encs,
             do_sample=True, 
@@ -206,6 +207,7 @@ class Generator:
             temperature=temperature,
             past_key_values=past_key_values
         )
+
         outputs = {}
         outputs['output_text'], outputs["output_tokens"] = self.toks2text_batch(sample_outputs, return_tokens=True, skip_special_tokens=False)
         

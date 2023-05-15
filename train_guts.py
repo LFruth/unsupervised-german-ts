@@ -28,7 +28,7 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument("--experiment", type=str, required=True, help="Experiment name. Will be used to save a model file and a log file.")
 
-parser.add_argument("--model_path", type=str, default="./models/gpt2_copy_extreme.bin", help="Path to a pretrained model.")
+parser.add_argument("--model_path", type=str, default="./models/gpt2_copy_finetune.bin", help="Path to a pretrained model.")
 parser.add_argument("--k", type=int, default=8, help="The k of k-SCST. Number of samples generated from a source text.")
 parser.add_argument("--learning_rate", type=float, default=1e-5, help="Learning rate.")
 parser.add_argument("--max_seq_length", type=int, default=265, help="Maximum output length. Saves time if the sequences are short.")
@@ -133,7 +133,6 @@ for epoch_i in range(10):
             generateds = [o['output_text'] for o in outputs]
             generateds_tokenized = [o['output_tokens'] for o in outputs]
 
-            #score_returns = reward.logsum_score(source, generateds, print_candidates=False)
             score_returns = reward.logsum_score(source, generateds, print_candidates=False)
             scores = score_returns[0]
 
