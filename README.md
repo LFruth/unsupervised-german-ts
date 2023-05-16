@@ -11,7 +11,7 @@ Author: Leon Fruth
 This approach is an adaption from the paper [Keep it Simple](https://arxiv.org/abs/2107.03444) to the German language.
 Large parts of the code are copied and/or adapted from the Keep it Simple repository: https://github.com/tingofurro/keep_it_simple/ 
 
-The reward scores and training progression from the training runs of GUTS-1 and GUTS-2 are visualized [here](https://wandb.ai/lfruth/Train%20GUTS/reports/Training-runs-of-GUTS-1-and-GUTS-2--VmlldzoxOTE1Mjc1?accessToken=9cgcoshbah9z8brqk51pwj0ovx4o284e6nd3s98jmto9jiqc7iecc9gsjm3l2sfw)
+The reward scores and training progression from the training runs of GUTS are visualized [here](https://wandb.ai/lfruth/Train%20GUTS/reports/Training-runs-of-GUTS-1-and-GUTS-2--VmlldzoxOTE1Mjc1?accessToken=9cgcoshbah9z8brqk51pwj0ovx4o284e6nd3s98jmto9jiqc7iecc9gsjm3l2sfw). The model used in this repository is named GUTS-2 in the report.
 
 ## Run GUTS 
 To test the GUTS models use the script [run_guts.py](run_guts.py). 
