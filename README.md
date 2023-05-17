@@ -43,7 +43,6 @@ Some of these scores are analysed on the reference datasets TextComplexityDE and
 
 ## Data
 The [data folder](data) contains the following datasets:
-- [TextComplexityDE19](data/TextComplexityDE19/) contains the raw TextComplexityDE dataset
 - [textcomplexityde.csv](data/textcomplexityde.csv) is the processed TextComplexity dataset. Here all sentences from a Wikipedia article are concatenated to form a Complex-Simple aligned dataset. This dataset was used for the analysis of the reward scores.
 - [leichtesprache2.csv](data/leichtesprache2.csv) are parallel articles from [GWW](https://www.gww-netz.de/de/).
 - [tc_eval.csv](data/tc_eval.csv) contains the manually composed paragraphs from the TextComplexityDE dataset, and the generated simplifications used for automatic evaluation of the thesis.
