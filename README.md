@@ -13,6 +13,7 @@ Large parts of the code are copied and/or adapted from the Keep it Simple reposi
 
 The reward scores and training progression from the training runs of GUTS are visualized [here](https://wandb.ai/lfruth/Train%20GUTS/reports/Training-runs-of-GUTS-1-and-GUTS-2--VmlldzoxOTE1Mjc1?accessToken=9cgcoshbah9z8brqk51pwj0ovx4o284e6nd3s98jmto9jiqc7iecc9gsjm3l2sfw). The model used in this repository is named GUTS-2 in the report.
 
+
 ## Run GUTS 
 To test the GUTS models use the script [run_guts.py](run_guts.py). 
 
@@ -47,7 +48,7 @@ The [data folder](data) contains the following datasets:
 - [leichtesprache2.csv](data/leichtesprache2.csv) are parallel articles from [GWW](https://www.gww-netz.de/de/).
 - [tc_eval.csv](data/tc_eval.csv) contains the manually composed paragraphs from the TextComplexityDE dataset, and the generated simplifications used for automatic evaluation of the thesis.
 - [wiki_eval.csv](data/wiki_eval.csv) contains paragraphs from Wikipedia and the generated simplifications used for automatic evaluation of the thesis.
-- [all_wiki_paragraphs.csv](data/all_wiki_paragraphs.csv) contains the extracted paragraphs from Wikipedia articles used for training.
+- [all_wiki_paragraphs.csv](data/all_wiki_paragraphs.csv) contains the extracted paragraphs from Wikipedia articles used for training. The file is contained in the latest [release](https://github.com/LFruth/unsupervised-german-ts/releases/tag/1.0)
 
 ## Automatic Evaluation
 The jupyter notebook, where the automatic evaluation can be reproduced is located in [notebooks/evaluation.ipynb](notebooks/evaluation.ipynb). 
@@ -56,9 +57,9 @@ This script uses the files [tc_eval.csv](data/tc_eval.csv) and [wiki_eval.csv](d
 
 ## Models
 This repository contains the following saved [models](models/):
-- One trained GUTS model: GUTS.bin
+- One trained GUTS model: GUTS.bin (contained in the [release](https://github.com/LFruth/unsupervised-german-ts/releases/tag/1.0))
 - morphmodel_ger.pgz: A model used for lemmatization of German words
-- wiki_finetune.bin: A saved BERT model trained on wikipedia paragraphs, for the LM-Fluency score.
+- wiki_finetune.bin: A saved BERT model trained on wikipedia paragraphs, for the LM-Fluency score. (contained in the [release](https://github.com/LFruth/unsupervised-german-ts/releases/tag/1.0))
 - All other models used in the reward scores are retrieved from the [huggingface library](https://huggingface.co/)
 
 ## Other scripts
